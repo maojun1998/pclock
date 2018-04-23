@@ -1,0 +1,5 @@
+MBR LOCKFOR WINDOWS
+===================
+
+* This code can be compiled by  NASM. This code just can run the X86 real mode
+  It can not used in the GUID DISAK PART TABLE.
