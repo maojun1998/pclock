@@ -37,7 +37,7 @@
 
 %define LOCK_EFA				1346
 			
-
+%define MBR_RELOCAK			7c00h
 
 
 init_the_seg:
@@ -197,11 +197,11 @@ chainloader:
 		xor 	ax,ax
 		cli
 		mov 	ss,ax
-		mov 	sp,MBR_SEG_ADR
+		mov 	sp,MBR_RELOCAK
 		sti
 		mov 	es,ax
 		mov 	ds,ax
-		mov 	si,MBR_SEG_ADR
+		mov 	si,MBR_RELOCAK
 		mov 	di,0x600
 		mov 	cx,0x200
 		cld
@@ -243,6 +243,9 @@ magic_:
 		times 510-($-$$) db 0
 		db 0x55
 		db 0xaa
+
+		
+		
 
 
 
